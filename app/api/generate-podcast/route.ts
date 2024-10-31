@@ -99,13 +99,18 @@ export async function POST(req: NextRequest) {
                 console.log('Scrape results received')
 
                 // 16. Combine scraped content
-                let combinedMarkdown = ''
+                let combinedMarkdown = '';
                 for (let i = 0; i < scrapeResults.length; i++) {
-                    const result = scrapeResults[i]
+                    const result = scrapeResults[i];
                     if (result.success) {
-                        console.log(`Adding content from ${urls[i]}`)
-                        combinedMarkdown += `\n\nFrom ${urls[i]}:\n${result.markdown}`
+                        const contentSnippet = result.markdown.split('\n').slice(0, 5).join('\n'); // Limit to first 5 lines
+                        combinedMarkdown += `\n\nFrom ${urls[i]}:\n${contentSnippet}`;
                     }
+                }
+
+                // Check if combinedMarkdown is within acceptable length
+                if (combinedMarkdown.length > 6000) {
+                    combinedMarkdown = combinedMarkdown.slice(0, 6000); // Trim if necessary
                 }
 
                 if (combinedMarkdown === '') {
