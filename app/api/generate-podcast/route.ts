@@ -38,7 +38,7 @@ const createAudioFileFromText = async (text: string) => {
         // 7. Generate audio using ElevenLabs API
         console.log('Generating audio')
         const audio = await client.generate({
-            voice: "Rachel",
+            voice: "Brian",
             model_id: "eleven_turbo_v2",
             text: text,
         })
@@ -127,11 +127,11 @@ export async function POST(req: NextRequest) {
                     messages: [
                         {
                             role: "system",
-                            content: "You are a witty tech news podcaster. Create a 5-minute script covering the top 5-10 most interesting tech stories. Summarize each story in 1-4 sentences, keeping the tone funny and entertaining. Aim for a mix of humor and information that will engage and amuse tech-savvy listeners. Focus solely on the content without any audio cues or formatting instructions. Return only the script that will be read by the text-to-speech system, without any additional instructions or metadata."
+                            content: "You are a tech news podcaster. Create a 5-minute script covering the top 5-10 most interesting tech stories. Summarize each story in 1-4 sentences, keeping the tone profesional and entertaining. Aim to provide information that will engage and amuse tech-savvy listeners. Focus solely on the content without any audio cues or formatting instructions. Return only the script that will be read by the text-to-speech system, without any additional instructions or metadata."
                         },
                         {
                             role: "user",
-                            content: `It's ${currentDate}. Create a hilarious and informative 5-minute podcast script covering the top 5-10 tech stories from the following content. Make it entertaining and engaging for our tech-loving audience. Return only the script to be read, without any formatting or instructions: ${combinedMarkdown}`
+                            content: `Welcome to Future Wire, where we dive deep into the latest trends and breaking news shaping the tech world today, It's ${currentDate}. Create a informative 5-minute podcast script covering the top 5-10 tech stories from the following content. Make it interesting and engaging for our tech-loving audience. Return only the script to be read, without any formatting or instructions: ${combinedMarkdown}`
                         }
                     ],
                     model: "llama-3.2-90b-text-preview",

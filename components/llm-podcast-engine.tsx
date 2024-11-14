@@ -14,7 +14,7 @@ export function LlmPodcastEngine() {
   // 3. Set up state variables using useState hook
   const [isLoading, setIsLoading] = useState(false)
   const [newsScript, setNewsScript] = useState('')
-  const [urls, setUrls] = useState(['https://techcrunch.com/', 'https://www.theverge.com/', 'https://news.ycombinator.com/'])
+  const [urls, setUrls] = useState(['https://www.theverge.com/tech', 'https://www.fastcompany.com/technology', 'https://www.wsj.com/tech/ai', 'https://techxplore.com/latest-news/', 'https://gizmodo.com/tech/artificial-intelligence', 'https://www.reuters.com/technology/', 'https://www.inc.com/technology', 'https://www.developer-tech.com/news/', 'https://www.theguardian.com/technology/all', 'https://www.reuters.com/technology/'])
   const [newUrl, setNewUrl] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [showAudio, setShowAudio] = useState(false)
@@ -175,7 +175,7 @@ export function LlmPodcastEngine() {
 
   // 15. Render the component
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen flex flex-col font-light text-white"
       initial="initial"
       animate={isLoading ? "animate" : "initial"}
@@ -193,7 +193,7 @@ export function LlmPodcastEngine() {
           <Card className="w-full rounded-lg shadow-lg overflow-hidden bg-black border-orange-500 border">
             <CardContent className="p-6 flex flex-col lg:flex-row gap-6 h-[calc(100vh-12rem)]">
               {/* 18. URL input and list section */}
-              <motion.div 
+              <motion.div
                 className="w-full lg:w-1/2 flex flex-col space-y-4"
                 initial={{ width: "100%" }}
                 animate={{ width: isExpanded ? "50%" : "100%" }}
@@ -225,9 +225,9 @@ export function LlmPodcastEngine() {
                     ))}
                   </div>
                 </ScrollArea>
-                <Button 
-                  onClick={fetchNews} 
-                  disabled={isLoading} 
+                <Button
+                  onClick={fetchNews}
+                  disabled={isLoading}
                   className="w-full bg-gradient-to-r from-orange-500 to-black text-white font-light"
                 >
                   {isLoading ? (
@@ -246,7 +246,7 @@ export function LlmPodcastEngine() {
               {/* 19. Podcast content and audio player section */}
               <AnimatePresence>
                 {isExpanded && (
-                  <motion.div 
+                  <motion.div
                     className="w-full lg:w-1/2 flex flex-col space-y-4 bg-black rounded-lg relative overflow-hidden"
                     initial={{ width: 0, opacity: 0 }}
                     animate={{ width: "50%", opacity: 1 }}
@@ -274,16 +274,16 @@ export function LlmPodcastEngine() {
                             transition={{ duration: 0.5 }}
                             className="space-y-2"
                           >
-                            <audio 
-                              ref={audioRef} 
-                              src={audioSrc} 
-                              className="w-full" 
-                              controls 
+                            <audio
+                              ref={audioRef}
+                              src={audioSrc}
+                              className="w-full"
+                              controls
                               onLoadedData={() => setIsAudioLoading(false)}
                             />
                             <div className="flex space-x-2">
-                              <Button 
-                                onClick={togglePlayPause} 
+                              <Button
+                                onClick={togglePlayPause}
                                 className="flex-grow bg-gradient-to-r from-orange-500 to-black text-white font-light"
                                 disabled={isAudioLoading}
                               >
