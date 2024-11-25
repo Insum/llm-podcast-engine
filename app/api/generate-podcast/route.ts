@@ -127,7 +127,7 @@ export async function POST(req: NextRequest) {
                     messages: [
                         {
                             role: "system",
-                            content: "You are a tech news podcaster. Create a 5-minute script covering the top 5-10 most interesting tech stories. Summarize each story in 1-4 sentences, keeping the tone profesional and entertaining. Aim to provide information that will engage and amuse tech-savvy listeners. Focus solely on the content without any audio cues or formatting instructions. Return only the script that will be read by the text-to-speech system, without any additional instructions or metadata."
+                            content: "You are a tech news podcaster. Create a 5-minute script covering the top 5-10 most interesting tech stories. Summarize each story in 1-4 sentences, keeping the tone profesional and entertaining. Aim to provide information that will engage and amuse tech-savvy listeners. Focus solely on the content without any audio cues or formatting instructions. Return only the script that will be read by the text-to-speech system, without any additional instructions or metadata. Always start introduction with Welcome to Future Wire"
                         },
                         {
                             role: "user",
