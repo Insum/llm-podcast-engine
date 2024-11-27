@@ -134,7 +134,7 @@ export async function POST(req: NextRequest) {
                             content: `Welcome to Future Wire, where we dive deep into the latest trends and breaking news shaping the tech world today, It's ${currentDate}. Create a informative 5-minute podcast script covering the top 5-10 tech stories from the following content. Make it interesting and engaging for our tech-loving audience. Return only the script to be read, without any formatting or instructions: ${combinedMarkdown}`
                         }
                     ],
-                    model: "llama-3.2-90b-text-preview",
+                    model: "llama-3.2-90b-vision-preview",
                     stream: true,
                 })
 

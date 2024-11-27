@@ -14,7 +14,7 @@ export function LlmPodcastEngine() {
   // 3. Set up state variables using useState hook
   const [isLoading, setIsLoading] = useState(false)
   const [newsScript, setNewsScript] = useState('')
-  const [urls, setUrls] = useState(['https://www.theverge.com/tech', 'https://www.fastcompany.com/technology', 'https://www.wsj.com/tech/ai', 'https://techxplore.com/latest-news/', 'https://gizmodo.com/tech/artificial-intelligence', 'https://www.reuters.com/technology/', 'https://www.inc.com/technology', 'https://www.developer-tech.com/news/', 'https://www.theguardian.com/technology/all', 'https://www.reuters.com/technology/'])
+  const [urls, setUrls] = useState(['https://www.theverge.com/tech', 'https://venturebeat.com/', 'https://www.fastcompany.com/technology', 'https://techxplore.com/latest-news/', 'https://gizmodo.com/tech/artificial-intelligence', 'https://www.reuters.com/technology/', 'https://www.inc.com/technology', 'https://www.developer-tech.com/news/', 'https://www.theguardian.com/technology/all', 'https://www.reuters.com/technology/'])
   const [newUrl, setNewUrl] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [showAudio, setShowAudio] = useState(false)
